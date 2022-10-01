@@ -1,0 +1,40 @@
+<section class="hero is-fullheight is-black is-bold">
+    <div class="hero-body">
+        <div class="container has-text-centered">
+            <p class="title">
+                Host your domain with me, private nginx for all your needs
+            </p>
+            <p class="subtitle">
+                Conduit, Aspnetcore, Flutter, MongoDB, React, Angular, Redux, NodeJs, Flask, Django, Rust, Solidity Postgres and Bitcoin/Ethereum nodes with basic auth
+            </p>
+        </div>
+    </div>
+    <div class="hero-foot">
+        <div class="container has-text-centered">
+            <button mat-button>https://noonecio.us</button>
+        </div>
+    </div>
+</section>
+<section class="hero is-halfheight is-black is-bold">
+    <div class="hero-body">
+        <div class="container has-text-centered">
+            <p class="title">Contact me!</p>
+            <p class="subtitle">with or without domain</p>
+            <mat-form-field style="width:100%" color="accent">
+                <input matInput type="text" placeholder="E-Mail" [formControl]="emailFormControl" [(ngModel)]="email">
+                <mat-error *ngIf="emailFormControl.hasError('required')">
+                    e-mail is required
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field style="width:100%" color="accent">
+                <textarea matInput placeholder="Message" cols="30" rows="5" [formControl]="bodyFormControl" [(ngModel)]="body">
+                </textarea>
+                <mat-error *ngIf="bodyFormControl.hasError('required')">
+                    message is required
+                </mat-error>
+                <button mat-button color="accent" matSuffix (click)="submit()">submit</button>
+                <div class="spinner-border spinner-border-sm" matSuffix *ngIf="isFetch | async"></div>
+            </mat-form-field>    
+        </div>
+    </div>
+</section>
